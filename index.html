@@ -10,6 +10,11 @@
       document.write(
         '<link rel="stylesheet" href="css/style.css?' + new Date().getTime() + '">'
       );
+      /*
+      document.write(
+        '<script src="js/script.js?' + new Date().getTime() + '"><\/script>'
+      );
+      */
 </script>
 
 </head>
@@ -96,7 +101,7 @@
 
   <div class="buttons">
     <select name="play_mode" id="play_mode">
-      <option value="select" selected>再生</option>
+      <option value="play">再生</option>
       <option value="only_code">コードのみ</option>
       <option value="only_melody">旋律のみ</option>
     </select>
@@ -538,6 +543,7 @@
 </div>
 
 
+
 <script>
   window.addEventListener("load", function(){
     displayNote();
@@ -584,7 +590,8 @@ statusDis  = setInterval(playBtnDisable , 0);
         break;    
     default:  
     statusAble = setInterval(playBtnAble , 10500); 
-  }  
+}
+
 }
 
 //停止ボタン
@@ -730,6 +737,7 @@ function playSingleNote(note) {
 
 
 
+
 //全体で使う変数や設定など
     const note_category = [note_category1,note_category2,note_category3,note_category4,note_category5,note_category6,note_category7,note_category8,note_category9,note_category10,note_category11,note_category12,note_category13,note_category14,note_category15,note_category16];
     const rhythm_category = [rhythm_category1,rhythm_category2,rhythm_category3,rhythm_category4,rhythm_category5,rhythm_category6,rhythm_category7,rhythm_category8,rhythm_category9,rhythm_category10,rhythm_category11,rhythm_category12,rhythm_category13,rhythm_category14,rhythm_category15,rhythm_category16];
@@ -749,6 +757,8 @@ function playSingleNote(note) {
 
     const play_mode = document.getElementById("play_mode");
     play_mode.onchange = Refresh;
+    const first = document.getElementById("first");
+    const latter = document.getElementById("latter");
     play_mode.onchange = displayNote;
     const notes = new Array(16); 
 
@@ -793,11 +803,63 @@ function rhythmDisplayFirst(){
   }
 }
 
+function rhythmDisplayLatter(){
+  for(i = 16; i < rhythm_category.length; i++){
+    note_category[i].style.visibility = "visible";
+    rhythm_category[i].style.visibility = "visible";
+  }
+  for(i = 17; i < rhythm_category.length; i+=2){
+    if(rhythm_category[i-1].value == "ta__n"){
+      rhythm_category[i].style.visibility = "hidden";
+      note_category[i].style.visibility = "hidden";
+    }
+    else if(rhythm_category[i-1].value == "ta_nta" || rhythm_category[i-1].value == "tata_n"){
+      rhythm_category[i].style.visibility = "hidden";
+    }
+    else{
+      rhythm_category[i].style.visibility = "visible";
+      note_category[i].style.visibility = "visible";
+    }
+  }
 
+  if(rhythm_category[16].value == "un"){
+    note_category[16].style.visibility = "hidden";
+  }
+  else{
+    note_category[16].style.visibility = "visible";
+  }
+  
+  for(i = 17; i < rhythm_category.length; i++){
+    if(rhythm_category[i].value == "un"){
+      note_category[i].style.visibility = "hidden";
+    }
+    else if(rhythm_category[i-1].value == "ta__n"){
+      note_category[i].style.visibility = "hidden";
+    }
+    else{
+      note_category[i].style.visibility = "visible";
+    }
+  }
+}
+
+function rhythmDisplayFirstClear(){
+  for(i = 0; i < rhythm_category.length/2; i++){
+    note_category[i].style.visibility = "hidden";
+    rhythm_category[i].style.visibility = "hidden";
+  }
+}
+function rhythmDisplayLatterClear(){
+  for(i = 16; i < rhythm_category.length; i++){
+    note_category[i].style.visibility = "hidden";
+    rhythm_category[i].style.visibility = "hidden";
+  }
+}
 
 //楽譜表示
 function displayNote(){
-  rhythmDisplayFirst();
+  
+    first.style.visibility = "visible";
+    rhythmDisplayFirst();
   changeRythm();
   ABCJS.renderAbc("note","M:4/4\nL:1/4\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `"F"` + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `"G"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `"C"` + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{responsive: "resize",paddingtop:"0",paddingbottom:"-16"});
 }    
@@ -1004,25 +1066,24 @@ function changeTempo(){
 function play(){
   Tone.Transport.start();
   switch (play_mode.value){
+    case "play":
+      playMelodyFirstHalf();
+      playCordsFirstHalf();
+        break;    
     case "only_code":
-      playCordsFirstHalf("0m");
+      playCordsFirstHalf();
         break;
     case "only_melody":
-      playMelodyFirstHalf("0m");
-        break; 
-    case "play":
-      playMelodyFirstHalf("0m");
-      playCordsFirstHalf("0m");
-        break;      
+      playMelodyFirstHalf();
+        break;
     default: 
-      playMelodyFirstHalf("0m");
-      playCordsFirstHalf("0m");
+      playMelodyFirstHalf();
+      playCordsFirstHalf();
   }    
 }
 
-
 //前半旋律再生
-function playMelodyFirstHalf(startTime){
+function playMelodyFirstHalf(){
   const synth = new Tone.Synth().toDestination();
   changeTempo();
   preparePlay();
@@ -1097,10 +1158,89 @@ for(i = 2; i < 32; i+=4){
   }
 }
 function setPlay(time, note) {synth.triggerAttackRelease(note.note, note.duration, time);}
-    const melody = new Tone.Sequence(setPlay, melodyList).start(startTime);
+    const melody = new Tone.Sequence(setPlay, melodyList).start();
     melody.loop = 0;  
 }
 
+//後半旋律再生
+function playMelodyLatterHalf() {
+  const synth = new Tone.Synth().toDestination();
+  changeTempo();
+  preparePlay();
+  const melodyList = [
+  {note: note_category[16].value, duration: "4n"},null,{note: note_category[17].value, duration: "4n"},null,
+  {note: note_category[18].value, duration: "4n"},null,{note: note_category[19].value, duration: "4n"},null,
+  {note: note_category[20].value, duration: "4n"},null,{note: note_category[21].value, duration: "4n"},null,
+  {note: note_category[22].value, duration: "4n"},null,{note: note_category[23].value, duration: "4n"},null,
+  {note: note_category[24].value, duration: "4n"},null,{note: note_category[25].value, duration: "4n"},null,
+  {note: note_category[26].value, duration: "4n"},null,{note: note_category[27].value, duration: "4n"},null,
+  {note: note_category[28].value, duration: "4n"},null,{note: note_category[29].value, duration: "4n"},null,
+  {note: note_category[30].value, duration: "4n"},null,{note: note_category[31].value, duration: "4n"},null,
+  ];
+for(i = 0; i < 32; i+=4){
+    switch(rhythm_category[i/2+16].value){
+    case "tata":
+    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
+    break;
+    case "un":
+    melodyList[i] = null;
+    break;
+    case "tau":
+    melodyList[i] = {note: note_category[i/2+16].value, duration: "8n"};
+    melodyList[i+1] = null;
+    break;
+    case "uta":
+    melodyList[i] = null;
+    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
+    break;
+    case "takka":
+    melodyList[i] = {note: note_category[i/2+16].value, duration: "6n"};
+    melodyList[i+1] = [null,{note: note_category[i/2+16].value, duration: "16n"}];
+    break;
+    case "ta__n":
+    melodyList[i] = {note: note_category[i/2+16].value, duration: "2n"};
+    melodyList[i+2] = null;
+    break;
+    case "ta_nta":
+    melodyList[i] = {note: note_category[i/2+16].value, duration: "3n"};
+    melodyList[i+2] = null;
+    melodyList[i+3] = {note: note_category[i/2+17].value, duration: "8n"};
+    break;
+    case "tata_n":
+    melodyList[i] = {note: note_category[i/2+16].value, duration: "8n"};
+    melodyList[i+1] = {note: note_category[i/2+17].value, duration: "3n"};
+    melodyList[i+2] = null;
+    break;
+    default:
+  }
+}
+for(i = 0; i < 32; i+=4){
+    switch(rhythm_category[i/2+16].value){
+    case "tata":
+    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
+    break;
+    case "un":
+    melodyList[i] = null;
+    break;
+    case "tau":
+    melodyList[i] = {note: note_category[i/2+16].value, duration: "8n"};
+    melodyList[i+1] = null;
+    break;
+    case "uta":
+    melodyList[i] = null;
+    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
+    break;
+    case "takka":
+    melodyList[i] = {note: note_category[i/2+16].value, duration: "6n"};
+    melodyList[i+1] = [null,{note: note_category[i/2+16].value, duration: "16n"}];
+    break;
+    default:
+  }
+}
+function setPlay(time, note) {synth.triggerAttackRelease(note.note, note.duration, time);}
+    const melody = new Tone.Sequence(setPlay, melodyList).start();
+    melody.loop = 0;  
+}
 
 //コード
 const C_chord = ["E4", "C4", "G3","C3"];
@@ -1111,7 +1251,27 @@ const Dm_chord = ["F4", "D4", "A2","D2"];
 const G7_chord = ["F4", "D4", "B3","G3","C2"];
 
 //前半コード再生
-function playCordsFirstHalf(startTime){
+function playCordsFirstHalf(){
+  const synth = new Tone.PolySynth().toDestination();
+  changeTempo();
+  const melodyList = [
+  {time: "0:0", note: C_chord, duration: "2n",velocity: 0.6},
+  {time: "0:2", note: C_chord, duration: "2n",velocity: 0.6},
+  {time: "1:0", note: F_chord, duration: "2n",velocity: 0.6},
+  {time: "1:2", note: F_chord, duration: "2n",velocity: 0.6},
+  {time: "2:0", note: G_chord, duration: "2n",velocity: 0.6},
+  {time: "2:2", note: G_chord, duration: "2n",velocity: 0.6},
+  {time: "3:0", note: C_chord, duration: "2n",velocity: 0.6},
+  {time: "3:2", note: C_chord, duration: "2n",velocity: 0.6},
+];
+function setPlay(time, note) {
+  synth.triggerAttackRelease(note.note, note.duration, time,note.velocity);
+}
+  const melody = new Tone.Part(setPlay, melodyList).start();
+}
+
+//後半コード再生
+function playCordsLatterHalf(){
   const synth = new Tone.PolySynth().toDestination();
   changeTempo();
   const melodyList = [
@@ -1119,17 +1279,15 @@ function playCordsFirstHalf(startTime){
   {time: "0:2", note: C_chord, duration: "2n",velocity: 0.6},
   {time: "1:0", note: Am_chord, duration: "2n",velocity: 0.6},
   {time: "1:2", note: Am_chord, duration: "2n",velocity: 0.6},
-  {time: "2:0", note: F_chord, duration: "2n",velocity: 0.6},
-  {time: "2:2", note: F_chord, duration: "2n",velocity: 0.6},
-  {time: "3:0", note: G_chord, duration: "1m",velocity: 0.6},
+  {time: "2:0", note: Dm_chord, duration: "2n",velocity: 0.6},
+  {time: "2:2", note: G7_chord, duration: "2n",velocity: 0.6},
+  {time: "3:0", note: C_chord, duration: "1m",velocity: 0.6},
 ];
 function setPlay(time, note) {
   synth.triggerAttackRelease(note.note, note.duration, time,note.velocity);
 }
-  const melody = new Tone.Part(setPlay, melodyList).start(startTime);
+  const melody = new Tone.Part(setPlay, melodyList).start();
 }
-
-
 
 </script>
 <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
