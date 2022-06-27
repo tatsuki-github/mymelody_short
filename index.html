@@ -1009,12 +1009,17 @@ function play(){
         break;
     case "only_melody":
       playMelodyFirstHalf("0m");
-        break;     
+        break; 
+    case "play":
+      playMelodyFirstHalf("0m");
+      playCordsFirstHalf("0m");
+        break;      
     default: 
       playMelodyFirstHalf("0m");
       playCordsFirstHalf("0m");
   }    
 }
+
 
 //前半旋律再生
 function playMelodyFirstHalf(startTime){
@@ -1094,6 +1099,34 @@ for(i = 2; i < 32; i+=4){
 function setPlay(time, note) {synth.triggerAttackRelease(note.note, note.duration, time);}
     const melody = new Tone.Sequence(setPlay, melodyList).start(startTime);
     melody.loop = 0;  
+}
+
+
+//コード
+const C_chord = ["E4", "C4", "G3","C3"];
+const Am_chord = ["E4", "C4", "A3","A2"];
+const F_chord = ["F4", "C4", "A3","F2"];
+const G_chord = ["D4", "B3", "D3","G2"];
+const Dm_chord = ["F4", "D4", "A2","D2"];
+const G7_chord = ["F4", "D4", "B3","G3","C2"];
+
+//前半コード再生
+function playCordsFirstHalf(startTime){
+  const synth = new Tone.PolySynth().toDestination();
+  changeTempo();
+  const melodyList = [
+  {time: "0:0", note: C_chord, duration: "2n",velocity: 0.6},
+  {time: "0:2", note: C_chord, duration: "2n",velocity: 0.6},
+  {time: "1:0", note: Am_chord, duration: "2n",velocity: 0.6},
+  {time: "1:2", note: Am_chord, duration: "2n",velocity: 0.6},
+  {time: "2:0", note: F_chord, duration: "2n",velocity: 0.6},
+  {time: "2:2", note: F_chord, duration: "2n",velocity: 0.6},
+  {time: "3:0", note: G_chord, duration: "1m",velocity: 0.6},
+];
+function setPlay(time, note) {
+  synth.triggerAttackRelease(note.note, note.duration, time,note.velocity);
+}
+  const melody = new Tone.Part(setPlay, melodyList).start(startTime);
 }
 
 
