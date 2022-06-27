@@ -10,11 +10,6 @@
       document.write(
         '<link rel="stylesheet" href="css/style.css?' + new Date().getTime() + '">'
       );
-      /*
-      document.write(
-        '<script src="js/script.js?' + new Date().getTime() + '"><\/script>'
-      );
-      */
 </script>
 
 </head>
@@ -101,12 +96,9 @@
 
   <div class="buttons">
     <select name="play_mode" id="play_mode">
-      <option value="select" selected>再生モード</option>
+      <option value="select" selected>再生</option>
       <option value="only_code">コードのみ</option>
       <option value="only_melody">旋律のみ</option>
-      <option value="play_first_half">前半再生</option>
-      <option value="play_latter_half">後半再生</option>
-      <option value="play">全曲再生</option>
     </select>
     
     <button id = "play"></button>
@@ -545,431 +537,6 @@
   </div>
 </div>
 
-<div id="latter">
-  <div id="note2"></div>
-
-  <div class="item">
-    <div class="part">
-      <div class="beat">
-        <p>17</p>
-          <select name="rhythm_category" id="rhythm_category17" class="rhythm">
-            <option value="tan">①</option>
-            <option value="tata">②</option>
-            <option value="un">③</option>
-            <option value="tau">④</option>
-            <option value="uta">⑤</option>
-            <option value="takka">⑥</option>
-            <option value="ta__n">⑦</option>
-            <option value="ta_nta">⑧</option>
-            <option value="tata_n">⑨</option>
-          </select>
-          <select name="note_category" id="note_category17" class="sound">
-            <option value="E5">ミ↑●</option>
-            <option value="D5">レ↑</option>
-            <option value="C5">ド↑●</option>
-            <option value="B4">シ</option>
-            <option value="A4">ラ</option>  
-            <option value="G4">ソ●</option>
-            <option value="F4">ファ</option>
-            <option value="E4">ミ●</option>
-            <option value="D4">レ</option>
-            <option value="C4" selected>ド●</option>
-          </select>
-      </div>
-  
-      <div class="beat">
-        <p>18</p>
-        <select name="rhythm_category" id="rhythm_category18" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category18" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ</option>  
-          <option value="G4">ソ●</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>19</p>
-        <select name="rhythm_category" id="rhythm_category19" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-          <option value="ta__n">⑦</option>
-          <option value="ta_nta">⑧</option>
-          <option value="tata_n">⑨</option>
-        </select>
-        <select name="note_category" id="note_category19" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ</option>  
-          <option value="G4">ソ●</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      
-      </div>
-  
-      <div class="beat">
-        <p>20</p>
-        <select name="rhythm_category" id="rhythm_category20" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category20" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ</option>  
-          <option value="G4">ソ●</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-    </div>  
-    
-  
-    <div class="part">
-      <div class="beat">
-        <p>21</p>
-        <select name="rhythm_category" id="rhythm_category21" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-          <option value="ta__n">⑦</option>
-          <option value="ta_nta">⑧</option>
-          <option value="tata_n">⑨</option>
-        </select>
-        <select name="note_category" id="note_category21" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>22</p>
-        <select name="rhythm_category" id="rhythm_category22" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category22" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      
-      </div>
-      <div class="beat">
-        <p>23</p>
-        <select name="rhythm_category" id="rhythm_category23" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-          <option value="ta__n">⑦</option>
-          <option value="ta_nta">⑧</option>
-          <option value="tata_n">⑨</option>
-        </select>
-        <select name="note_category" id="note_category23" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>24</p>
-        <select name="rhythm_category" id="rhythm_category24" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category24" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-    </div>
-    
-  
-    <div class="part">
-      <div class="beat">
-        <p>25</p>
-        <select name="rhythm_category" id="rhythm_category25" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-          <option value="ta__n">⑦</option>
-          <option value="ta_nta">⑧</option>
-          <option value="tata_n">⑨</option>
-        </select>
-        <select name="note_category" id="note_category25" class="sound">
-          <option value="E5">ミ↑</option>  
-          <option value="D5">レ↑●</option>
-          <option value="C5">ド↑</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ●</option>
-          <option value="E4">ミ</option>
-          <option value="D4">レ●</option>
-          <option value="C4" selected>ド</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>26</p>
-        <select name="rhythm_category" id="rhythm_category26" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category26" class="sound">
-          <option value="E5">ミ↑</option>  
-          <option value="D5">レ↑●</option>
-          <option value="C5">ド↑</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ●</option>
-          <option value="E4">ミ</option>
-          <option value="D4">レ●</option>
-          <option value="C4" selected>ド</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>27</p>
-        <select name="rhythm_category" id="rhythm_category27" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-          <option value="ta__n">⑦</option>
-          <option value="ta_nta">⑧</option>
-          <option value="tata_n">⑨</option>
-        </select>
-        <select name="note_category" id="note_category27" class="sound">
-          <option value="E5">ミ↑</option>  
-          <option value="D5">レ↑●</option>
-          <option value="C5">ド↑</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ●</option>
-          <option value="E4">ミ</option>
-          <option value="D4">レ●</option>
-          <option value="C4" selected>ド</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>28</p>
-        <select name="rhythm_category" id="rhythm_category28" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category28" class="sound">
-          <option value="E5">ミ↑</option>  
-          <option value="D5">レ↑●</option>
-          <option value="C5">ド↑</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ●</option>
-          <option value="G4">ソ</option>
-          <option value="F4">ファ●</option>
-          <option value="E4">ミ</option>
-          <option value="D4">レ●</option>
-          <option value="C4" selected>ド</option>
-        </select>
-      </div>
-    </div>
-    
-  
-    <div class="part">
-      <div class="beat">
-        <p>29</p>
-        <select name="rhythm_category" id="rhythm_category29" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-          <option value="ta__n">⑦</option>
-          <option value="ta_nta">⑧</option>
-          <option value="tata_n">⑨</option>
-        </select>
-        <select name="note_category" id="note_category29" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ</option>  
-          <option value="G4">ソ●</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>30</p>
-        <select name="rhythm_category" id="rhythm_category30" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category30" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ</option>  
-          <option value="G4">ソ●</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>31</p>
-        <select name="rhythm_category" id="rhythm_category31" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-          <option value="ta__n">⑦</option>
-          <option value="ta_nta">⑧</option>
-          <option value="tata_n">⑨</option>
-        </select>
-        <select name="note_category" id="note_category31" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ</option>  
-          <option value="G4">ソ●</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-  
-      <div class="beat">
-        <p>32</p>
-        <select name="rhythm_category" id="rhythm_category32" class="rhythm">
-          <option value="tan">①</option>
-          <option value="tata">②</option>
-          <option value="un">③</option>
-          <option value="tau">④</option>
-          <option value="uta">⑤</option>
-          <option value="takka">⑥</option>
-        </select>
-        <select name="note_category" id="note_category32" class="sound">
-          <option value="E5">ミ↑●</option>
-          <option value="D5">レ↑</option>
-          <option value="C5">ド↑●</option>
-          <option value="B4">シ</option>
-          <option value="A4">ラ</option>  
-          <option value="G4">ソ●</option>
-          <option value="F4">ファ</option>
-          <option value="E4">ミ●</option>
-          <option value="D4">レ</option>
-          <option value="C4" selected>ド●</option>
-        </select>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
   window.addEventListener("load", function(){
@@ -996,7 +563,6 @@ clearInterval(statusAble);
 
 function playBtnClicked(){ 
 statusDis  = setInterval(playBtnDisable , 0); 
-if(play_mode.value == "play_first_half" || play_mode.value == "play_latter_half"){
   switch (tempo_category.value){
     case "tempo_60":
     statusAble = setInterval(playBtnAble , 17000); 
@@ -1019,31 +585,6 @@ if(play_mode.value == "play_first_half" || play_mode.value == "play_latter_half"
     default:  
     statusAble = setInterval(playBtnAble , 10500); 
   }  
-}
-else{
-  switch (tempo_category.value){
-    case "tempo_60":
-    statusAble = setInterval(playBtnAble , 33000); 
-        break;
-    case "tempo_80":
-    statusAble = setInterval(playBtnAble , 25000); 
-        break;
-    case "tempo_100":
-    statusAble = setInterval(playBtnAble , 17000); 
-        break;
-    case "tempo_120":
-    statusAble = setInterval(playBtnAble , 16500); 
-        break;    
-    case "tempo_140":
-    statusAble = setInterval(playBtnAble , 14500); 
-        break;    
-    case "tempo_160":
-    statusAble = setInterval(playBtnAble , 12500); 
-        break;           
-    default: 
-    statusAble = setInterval(playBtnAble , 17000); 
-  }  
-}
 }
 
 //停止ボタン
@@ -1187,116 +728,18 @@ function playSingleNote(note) {
     playSingleNote("E5");
 }, false);
 
-/*
-document.getElementById("note_category1").addEventListener("change", function() {
-    playSingleNote(note_category1.value);
-}, false);
-document.getElementById("note_category2").addEventListener("change", function() {
-    playSingleNote(note_category2.value);
-}, false);
-document.getElementById("note_category3").addEventListener("change", function() {
-    playSingleNote(note_category3.value);
-}, false);
-document.getElementById("note_category4").addEventListener("change", function() {
-    playSingleNote(note_category4.value);
-}, false);
-document.getElementById("note_category5").addEventListener("change", function() {
-    playSingleNote(note_category5.value);
-}, false);
-document.getElementById("note_category6").addEventListener("change", function() {
-    playSingleNote(note_category6.value);
-}, false);
-document.getElementById("note_category7").addEventListener("change", function() {
-    playSingleNote(note_category7.value);
-}, false);
-document.getElementById("note_category8").addEventListener("change", function() {
-    playSingleNote(note_category8.value);
-}, false);
-document.getElementById("note_category9").addEventListener("change", function() {
-    playSingleNote(note_category9.value);
-}, false);
-document.getElementById("note_category10").addEventListener("change", function() {
-    playSingleNote(note_category10.value);
-}, false);
-document.getElementById("note_category11").addEventListener("change", function() {
-    playSingleNote(note_category11.value);
-}, false);
-document.getElementById("note_category12").addEventListener("change", function() {
-    playSingleNote(note_category12.value);
-}, false);
-document.getElementById("note_category13").addEventListener("change", function() {
-    playSingleNote(note_category13.value);
-}, false);
-document.getElementById("note_category14").addEventListener("change", function() {
-    playSingleNote(note_category14.value);
-}, false);
-document.getElementById("note_category15").addEventListener("change", function() {
-    playSingleNote(note_category15.value);
-}, false);
-document.getElementById("note_category16").addEventListener("change", function() {
-    playSingleNote(note_category16.value);
-}, false);
-document.getElementById("note_category17").addEventListener("change", function() {
-    playSingleNote(note_category17.value);
-}, false);
-document.getElementById("note_category18").addEventListener("change", function() {
-    playSingleNote(note_category18.value);
-}, false);
-document.getElementById("note_category19").addEventListener("change", function() {
-    playSingleNote(note_category19.value);
-}, false);
-document.getElementById("note_category20").addEventListener("change", function() {
-    playSingleNote(note_category20.value);
-}, false);
-document.getElementById("note_category21").addEventListener("change", function() {
-    playSingleNote(note_category21.value);
-}, false);
-document.getElementById("note_category22").addEventListener("change", function() {
-    playSingleNote(note_category22.value);
-}, false);
-document.getElementById("note_category23").addEventListener("change", function() {
-    playSingleNote(note_category23.value);
-}, false);
-document.getElementById("note_category24").addEventListener("change", function() {
-    playSingleNote(note_category24.value);
-}, false);
-document.getElementById("note_category25").addEventListener("change", function() {
-    playSingleNote(note_category25.value);
-}, false);
-document.getElementById("note_category26").addEventListener("change", function() {
-    playSingleNote(note_category26.value);
-}, false);
-document.getElementById("note_category27").addEventListener("change", function() {
-    playSingleNote(note_category27.value);
-}, false);
-document.getElementById("note_category28").addEventListener("change", function() {
-    playSingleNote(note_category28.value);
-}, false);
-document.getElementById("note_category29").addEventListener("change", function() {
-    playSingleNote(note_category29.value);
-}, false);
-document.getElementById("note_category30").addEventListener("change", function() {
-    playSingleNote(note_category30.value);
-}, false);
-document.getElementById("note_category31").addEventListener("change", function() {
-    playSingleNote(note_category31.value);
-}, false);
-document.getElementById("note_category32").addEventListener("change", function() {
-    playSingleNote(note_category32.value);
-}, false);
-*/
 
 
 //全体で使う変数や設定など
-    const note_category = [note_category1,note_category2,note_category3,note_category4,note_category5,note_category6,note_category7,note_category8,note_category9,note_category10,note_category11,note_category12,note_category13,note_category14,note_category15,note_category16,note_category17,note_category18,note_category19,note_category20,note_category21,note_category22,note_category23,note_category24,note_category25,note_category26,note_category27,note_category28,note_category29,note_category30,note_category31,note_category32];
-    const rhythm_category = [rhythm_category1,rhythm_category2,rhythm_category3,rhythm_category4,rhythm_category5,rhythm_category6,rhythm_category7,rhythm_category8,rhythm_category9,rhythm_category10,rhythm_category11,rhythm_category12,rhythm_category13,rhythm_category14,rhythm_category15,rhythm_category16,rhythm_category17,rhythm_category18,rhythm_category19,rhythm_category20,rhythm_category21,rhythm_category22,rhythm_category23,rhythm_category24,rhythm_category25,rhythm_category26,rhythm_category27,rhythm_category28,rhythm_category29,rhythm_category30,rhythm_category31,rhythm_category32];
+    const note_category = [note_category1,note_category2,note_category3,note_category4,note_category5,note_category6,note_category7,note_category8,note_category9,note_category10,note_category11,note_category12,note_category13,note_category14,note_category15,note_category16];
+    const rhythm_category = [rhythm_category1,rhythm_category2,rhythm_category3,rhythm_category4,rhythm_category5,rhythm_category6,rhythm_category7,rhythm_category8,rhythm_category9,rhythm_category10,rhythm_category11,rhythm_category12,rhythm_category13,rhythm_category14,rhythm_category15,rhythm_category16];
     
-    for(i = 0; i < 32; i++){
+    for(i = 0; i < 16; i++){
       note_category[i] = document.getElementById(`note_category${i+1}`);
       rhythm_category[i] = document.getElementById(`rhythm_category${i+1}`);
     }
 
-    for(i = 0; i < 32; i++){
+    for(i = 0; i < 16; i++){
       note_category[i].onchange = displayNote;
       rhythm_category[i].onchange = displayNote;
     }
@@ -1306,10 +749,8 @@ document.getElementById("note_category32").addEventListener("change", function()
 
     const play_mode = document.getElementById("play_mode");
     play_mode.onchange = Refresh;
-    const first = document.getElementById("first");
-    const latter = document.getElementById("latter");
     play_mode.onchange = displayNote;
-    const notes = new Array(32); 
+    const notes = new Array(16); 
 
 //選択肢表示・非表示
 function rhythmDisplayFirst(){
@@ -1352,81 +793,13 @@ function rhythmDisplayFirst(){
   }
 }
 
-function rhythmDisplayLatter(){
-  for(i = 16; i < rhythm_category.length; i++){
-    note_category[i].style.visibility = "visible";
-    rhythm_category[i].style.visibility = "visible";
-  }
-  for(i = 17; i < rhythm_category.length; i+=2){
-    if(rhythm_category[i-1].value == "ta__n"){
-      rhythm_category[i].style.visibility = "hidden";
-      note_category[i].style.visibility = "hidden";
-    }
-    else if(rhythm_category[i-1].value == "ta_nta" || rhythm_category[i-1].value == "tata_n"){
-      rhythm_category[i].style.visibility = "hidden";
-    }
-    else{
-      rhythm_category[i].style.visibility = "visible";
-      note_category[i].style.visibility = "visible";
-    }
-  }
 
-  if(rhythm_category[16].value == "un"){
-    note_category[16].style.visibility = "hidden";
-  }
-  else{
-    note_category[16].style.visibility = "visible";
-  }
-  
-  for(i = 17; i < rhythm_category.length; i++){
-    if(rhythm_category[i].value == "un"){
-      note_category[i].style.visibility = "hidden";
-    }
-    else if(rhythm_category[i-1].value == "ta__n"){
-      note_category[i].style.visibility = "hidden";
-    }
-    else{
-      note_category[i].style.visibility = "visible";
-    }
-  }
-}
-
-function rhythmDisplayFirstClear(){
-  for(i = 0; i < rhythm_category.length/2; i++){
-    note_category[i].style.visibility = "hidden";
-    rhythm_category[i].style.visibility = "hidden";
-  }
-}
-function rhythmDisplayLatterClear(){
-  for(i = 16; i < rhythm_category.length; i++){
-    note_category[i].style.visibility = "hidden";
-    rhythm_category[i].style.visibility = "hidden";
-  }
-}
 
 //楽譜表示
 function displayNote(){
-  if(play_mode.value == "play_first_half"){
-    first.style.visibility = "visible";
-    latter.style.visibility = "hidden";
-    rhythmDisplayFirst();
-    rhythmDisplayLatterClear();
-  }
-  else if(play_mode.value == "play_latter_half"){
-    first.style.visibility = "hidden";
-    latter.style.visibility = "visible";
-    rhythmDisplayLatter();
-    rhythmDisplayFirstClear();
-  }
-  else{
-    first.style.visibility = "visible";
-    latter.style.visibility = "visible";
-    rhythmDisplayFirst();
-    rhythmDisplayLatter();
-  }
+  rhythmDisplayFirst();
   changeRythm();
-  ABCJS.renderAbc("note","M:4/4\nL:1/4\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `"Am"` + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `"F"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `"G"` + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{responsive: "resize",paddingtop:"0",paddingbottom:"-16"});
-  ABCJS.renderAbc("note2","\nL:1/4\nK:C\n " + `"C"` + `${notes[16]}` + notes[17] + notes[18] + notes[19] + "|" + `"Am"` + `${notes[20]}` + notes[21] + notes[22] + notes[23] + "|" + `"Dm"` + `${notes[24]}` + notes[25] + `"G7"` + `${notes[26]}`  + notes[27] + "|" + `"C"` + `${notes[28]}` + notes[29] + notes[30] + notes[31] + "||",{responsive: "resize",paddingtop:"0",paddingbottom:"-16"});
+  ABCJS.renderAbc("note","M:4/4\nL:1/4\nK:C\n " + `"C"` + `${notes[0]}` + notes[1] + notes[2] + notes[3] + "|" + `"F"` + `${notes[4]}` + notes[5] + notes[6] + notes[7] + "|" + `"G"` + `${notes[8]}` + notes[9] + notes[10] + notes[11] + "|" + `"C"` + `${notes[12]}`  + notes[13] + notes[14] + notes[15] + "|",{responsive: "resize",paddingtop:"0",paddingbottom:"-16"});
 }    
 
 //楽譜表示切り替え
@@ -1633,31 +1006,13 @@ function play(){
   switch (play_mode.value){
     case "only_code":
       playCordsFirstHalf("0m");
-      playCordsLatterHalf("4m");   
         break;
     case "only_melody":
       playMelodyFirstHalf("0m");
-      playMelodyLatterHalf("4m");
-        break;
-    case "play_first_half":
-      playMelodyFirstHalf("0m");
-      playCordsFirstHalf("0m");
-        break;
-    case "play_latter_half":
-      playMelodyLatterHalf("0m");
-      playCordsLatterHalf("0m");   
-        break;    
-    case "play":
-      playMelodyFirstHalf("0m");
-      playMelodyLatterHalf("4m");
-      playCordsFirstHalf("0m");
-      playCordsLatterHalf("4m");  
-        break;    
+        break;     
     default: 
       playMelodyFirstHalf("0m");
-      playMelodyLatterHalf("4m"); 
       playCordsFirstHalf("0m");
-      playCordsLatterHalf("4m");  
   }    
 }
 
@@ -1741,131 +1096,7 @@ function setPlay(time, note) {synth.triggerAttackRelease(note.note, note.duratio
     melody.loop = 0;  
 }
 
-//後半旋律再生
-function playMelodyLatterHalf(startTime) {
-  const synth = new Tone.Synth().toDestination();
-  changeTempo();
-  preparePlay();
-  const melodyList = [
-  {note: note_category[16].value, duration: "4n"},null,{note: note_category[17].value, duration: "4n"},null,
-  {note: note_category[18].value, duration: "4n"},null,{note: note_category[19].value, duration: "4n"},null,
-  {note: note_category[20].value, duration: "4n"},null,{note: note_category[21].value, duration: "4n"},null,
-  {note: note_category[22].value, duration: "4n"},null,{note: note_category[23].value, duration: "4n"},null,
-  {note: note_category[24].value, duration: "4n"},null,{note: note_category[25].value, duration: "4n"},null,
-  {note: note_category[26].value, duration: "4n"},null,{note: note_category[27].value, duration: "4n"},null,
-  {note: note_category[28].value, duration: "4n"},null,{note: note_category[29].value, duration: "4n"},null,
-  {note: note_category[30].value, duration: "4n"},null,{note: note_category[31].value, duration: "4n"},null,
-  ];
-for(i = 0; i < 32; i+=4){
-    switch(rhythm_category[i/2+16].value){
-    case "tata":
-    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
-    break;
-    case "un":
-    melodyList[i] = null;
-    break;
-    case "tau":
-    melodyList[i] = {note: note_category[i/2+16].value, duration: "8n"};
-    melodyList[i+1] = null;
-    break;
-    case "uta":
-    melodyList[i] = null;
-    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
-    break;
-    case "takka":
-    melodyList[i] = {note: note_category[i/2+16].value, duration: "6n"};
-    melodyList[i+1] = [null,{note: note_category[i/2+16].value, duration: "16n"}];
-    break;
-    case "ta__n":
-    melodyList[i] = {note: note_category[i/2+16].value, duration: "2n"};
-    melodyList[i+2] = null;
-    break;
-    case "ta_nta":
-    melodyList[i] = {note: note_category[i/2+16].value, duration: "3n"};
-    melodyList[i+2] = null;
-    melodyList[i+3] = {note: note_category[i/2+17].value, duration: "8n"};
-    break;
-    case "tata_n":
-    melodyList[i] = {note: note_category[i/2+16].value, duration: "8n"};
-    melodyList[i+1] = {note: note_category[i/2+17].value, duration: "3n"};
-    melodyList[i+2] = null;
-    break;
-    default:
-  }
-}
-for(i = 0; i < 32; i+=4){
-    switch(rhythm_category[i/2+16].value){
-    case "tata":
-    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
-    break;
-    case "un":
-    melodyList[i] = null;
-    break;
-    case "tau":
-    melodyList[i] = {note: note_category[i/2+16].value, duration: "8n"};
-    melodyList[i+1] = null;
-    break;
-    case "uta":
-    melodyList[i] = null;
-    melodyList[i+1] = {note: note_category[i/2+16].value, duration: "8n"};
-    break;
-    case "takka":
-    melodyList[i] = {note: note_category[i/2+16].value, duration: "6n"};
-    melodyList[i+1] = [null,{note: note_category[i/2+16].value, duration: "16n"}];
-    break;
-    default:
-  }
-}
-function setPlay(time, note) {synth.triggerAttackRelease(note.note, note.duration, time);}
-    const melody = new Tone.Sequence(setPlay, melodyList).start(startTime);
-    melody.loop = 0;  
-}
 
-//コード
-const C_chord = ["E4", "C4", "G3","C3"];
-const Am_chord = ["E4", "C4", "A3","A2"];
-const F_chord = ["F4", "C4", "A3","F2"];
-const G_chord = ["D4", "B3", "D3","G2"];
-const Dm_chord = ["F4", "D4", "A2","D2"];
-const G7_chord = ["F4", "D4", "B3","G3","C2"];
-
-//前半コード再生
-function playCordsFirstHalf(startTime){
-  const synth = new Tone.PolySynth().toDestination();
-  changeTempo();
-  const melodyList = [
-  {time: "0:0", note: C_chord, duration: "2n",velocity: 0.6},
-  {time: "0:2", note: C_chord, duration: "2n",velocity: 0.6},
-  {time: "1:0", note: Am_chord, duration: "2n",velocity: 0.6},
-  {time: "1:2", note: Am_chord, duration: "2n",velocity: 0.6},
-  {time: "2:0", note: F_chord, duration: "2n",velocity: 0.6},
-  {time: "2:2", note: F_chord, duration: "2n",velocity: 0.6},
-  {time: "3:0", note: G_chord, duration: "1m",velocity: 0.6},
-];
-function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time,note.velocity);
-}
-  const melody = new Tone.Part(setPlay, melodyList).start(startTime);
-}
-
-//後半コード再生
-function playCordsLatterHalf(startTime){
-  const synth = new Tone.PolySynth().toDestination();
-  changeTempo();
-  const melodyList = [
-  {time: "0:0", note: C_chord, duration: "2n",velocity: 0.6},
-  {time: "0:2", note: C_chord, duration: "2n",velocity: 0.6},
-  {time: "1:0", note: Am_chord, duration: "2n",velocity: 0.6},
-  {time: "1:2", note: Am_chord, duration: "2n",velocity: 0.6},
-  {time: "2:0", note: Dm_chord, duration: "2n",velocity: 0.6},
-  {time: "2:2", note: G7_chord, duration: "2n",velocity: 0.6},
-  {time: "3:0", note: C_chord, duration: "1m",velocity: 0.6},
-];
-function setPlay(time, note) {
-  synth.triggerAttackRelease(note.note, note.duration, time,note.velocity);
-}
-  const melody = new Tone.Part(setPlay, melodyList).start(startTime);
-}
 
 </script>
 <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>

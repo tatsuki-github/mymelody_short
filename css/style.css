@@ -59,7 +59,7 @@ select {
 
 .rhythm_img {
   display: flex;
-  margin: 0.2vw 0 0 0;
+  margin: 8vw 0 4vw 0;
   justify-content: space-around;
   font-size: 4vw;
 }
@@ -71,16 +71,16 @@ select {
 #uta,
 #takka {
   border: 0.2vw solid lightblue;
-  width: 48px;
-  height: 56px;
+  width: 56px;
+  height: 64px;
 }
 
 #ta__n,
 #ta_nta,
 #tata_n {
   border: 0.2vw solid lightpink;
-  width: 96px;
-  height: 56px;
+  width: 112px;
+  height: 64px;
 }
 
 .rhythm_img p {
@@ -91,7 +91,7 @@ select {
   display: flex;
   justify-content: space-around;
   width: 100vw;
-  margin: 0.1vw 0 0 0;
+  margin: 4vw 0 0 0;
 }
 
 #tempo_category {
@@ -203,4 +203,8 @@ button {
   background-color: black;
   margin: 0 -0.6vw;
   z-index: 2;
+}
+
+#first{
+  margin-top: 4vw;
 }
