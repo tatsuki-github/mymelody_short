@@ -1243,10 +1243,18 @@ function setPlay(time, note) {synth.triggerAttackRelease(note.note, note.duratio
 }
 
 //コード
-const C_chord = ["E4", "C4", "G3","C3"];
+//ド→C3　レ→D3　ミ→E3　ファ→F3　ソ→G3　ラ→A3　シ→B3　ド→C4　レ→D4 ミ→E4
+
+//Cコード　ドミソドミ
+const C_chord = ["C3","E3","G3","C4","E4"];
+//Fコード　ドファラド
+const F_chord = ["C3","F3","A3","C4"];
+//Gコード　レソシレ
+const G_chord = ["D3","G3","B3","D4"];
+
+
+
 const Am_chord = ["E4", "C4", "A3","A2"];
-const F_chord = ["F4", "C4", "A3","F2"];
-const G_chord = ["D4", "B3", "D3","G2"];
 const Dm_chord = ["F4", "D4", "A2","D2"];
 const G7_chord = ["F4", "D4", "B3","G3","C2"];
 
